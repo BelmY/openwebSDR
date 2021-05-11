@@ -7,7 +7,7 @@ server_hostname = "CRRP-SDR"
 max_clients = 20
 
 # ==== Web GUI configuration ====
-receiver_name = "[Casa do Radioamador de Ribeirao Preto]"
+receiver_name = "[CRRP]"
 receiver_location = "Ribeirão Preto SP, Brazil"
 receiver_qra = "PY2ERA"
 receiver_asl = 540
