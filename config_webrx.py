@@ -3,22 +3,22 @@
 # ==== Server settings ====
 web_port = 5000
 # If this contains an incorrect value, the web UI may freeze on load (it can't open websocket)
-server_hostname = "localhost"
-max_clients = 20
+server_hostname = "CRRP-SDR"
+max_clients = 10
 
 # ==== Web GUI configuration ====
-receiver_name = "[Casa do Radioamador de Ribeirao Preto]"
+receiver_name = "[CRRP]"
 receiver_location = "Ribeirão Preto SP, Brazil"
 receiver_qra = "PY2ERA"
-receiver_asl = 560
-receiver_ant = "Windom"
+receiver_asl = 540
+receiver_ant = "Flowerpot VHF"
 receiver_device = "RTL-SDR"
-receiver_admin = "Ricardo Paschoali (PY2PCR)"
-receiver_gps = (47.000000, 19.000000)
+receiver_admin = "PY2PCR,PY2GMG,PY2ALA"
+receiver_gps = (-21.2216436, -47.7660078)
 photo_height = 350
-photo_title = "Panorama of Budapest from Schönherz Zoltán Dormitory"
+photo_title = "Casa Do Radioamador de Ribeirao Preto-SP"
 photo_desc = """
-You can add your own background photo and receiver information.<br />
+"Casa do Radioamador de Ribeirão Preto" (House of the Radio Amateur of Ribeirão Preto).<br />
 Receiver is operated by: <a href="mailto:%[RX_ADMIN]">%[RX_ADMIN]</a><br/>
 Device: %[RX_DEVICE]<br />
 Antenna: %[RX_ANT]<br />
@@ -31,17 +31,20 @@ sdrhu_public_listing = False
 
 # ==== DSP/RX settings ====
 fft_fps = 20
-fft_size = 4096  # Should be power of 2
+fft_size = 4096*2  # Should be power of 2
 # If fft_voverlap_factor is above 0, multiple FFTs will be used for creating a line on the diagram.
 fft_voverlap_factor = 0.3
 
-# samp_rate = 250000
-samp_rate = 900000
-center_freq = 146670000
+samp_rate = 250000
+#samp_rate = 950000
+center_freq = 146670000 
+#center_freq = 119550000 
+#center_freq = 27015000 -15100
 # in dB. For an RTL-SDR, rf_gain=0 will set the tuner to auto gain mode, else it will be in manual gain mode.
-rf_gain = 30
-ppm = 45
-audio_compression = "adpcm"  # valid values: "adpcm", "none"
+rf_gain = 35
+ppm = 37
+audio_compression = "none"  # valid values: "adpcm", "none"
+#audio_compression = "adpcm"  # valid values: "adpcm", "none"
 fft_compression = "adpcm"  # valid values: "adpcm", "none"
 
 digimodes_enable = False  # Decoding digimodes come with higher CPU usage.
@@ -56,7 +59,6 @@ Note: if you experience audio underruns while CPU usage is 100%, you can:
 - decrease `fft_fps` and `fft_size`,
 - limit the number of users by decreasing `max_clients`.
 """
-
 # ==== I/Q sources ====
 # (Uncomment the appropriate by removing # characters at the beginning of the corresponding lines.)
 
@@ -141,17 +143,9 @@ mathbox_waterfall_colors = "[0x000000ff,0x2e6893ff, 0x69a5d0ff, 0x214b69ff, 0x9d
 # This allows you to change the buffering mode of csdr.
 csdr_dynamic_bufsize = False
 # This prints the buffer sizes used for csdr processes.
-csdr_print_bufsizes = False
+csdr_print_bufsizes = True
 # Setting this True will print out how much data is going into the DSP chains.
-csdr_through = False
+csdr_through = True
 
 # in megabytes. This sets the approximate size of the circular buffer used by nmux.
-nmux_memory = 50
-
-# Look up external IP address automatically from icanhazip.com, and use it as [server_hostname]
-"""
-print "[openwebrx-config] Detecting external IP address..."
-import urllib2
-server_hostname=urllib2.urlopen("http://icanhazip.com").read()[:-1]
-print "[openwebrx-config] External IP address detected:", server_hostname
-"""
+nmux_memory = 100

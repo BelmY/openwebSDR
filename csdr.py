@@ -30,13 +30,13 @@ import fcntl
 class dsp:
 
     def __init__(self):
-        self.samp_rate = 250000
+        self.samp_rate = 240000
         self.output_rate = 11025 #this is default, and cannot be set at the moment
-        self.fft_size = 1024
-        self.fft_fps = 5
+        self.fft_size = 2048
+        self.fft_fps = 20
         self.offset_freq = 0
-        self.low_cut = -4000
-        self.high_cut = 4000
+        self.low_cut = -3300
+        self.high_cut = 3300
         self.bpf_transition_bw = 320 #Hz, and this is a constant
         self.ddc_transition_bw_rate = 0.15 # of the IF sample rate
         self.running = False
