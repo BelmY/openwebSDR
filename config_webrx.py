@@ -3,14 +3,14 @@
 # ==== Server settings ====
 web_port = 5000
 # If this contains an incorrect value, the web UI may freeze on load (it can't open websocket)
-server_hostname = "localhost"
+server_hostname = "CRRP-SDR"
 max_clients = 20
 
 # ==== Web GUI configuration ====
 receiver_name = "[Casa do Radioamador de Ribeirao Preto]"
 receiver_location = "Ribeirão Preto SP, Brazil"
 receiver_qra = "PY2ERA"
-receiver_asl = 560
+receiver_asl = 540
 receiver_ant = "Windom"
 receiver_device = "RTL-SDR"
 receiver_admin = "Ricardo Paschoali (PY2PCR)"
@@ -56,6 +56,15 @@ Note: if you experience audio underruns while CPU usage is 100%, you can:
 - decrease `fft_fps` and `fft_size`,
 - limit the number of users by decreasing `max_clients`.
 """
+# ==== I/Q sources ====
+# (Uncomment the appropriate by removing # characters at the beginning of the corresponding lines.)
+
+#################################################################################################
+# Is my SDR hardware supported?                                                                 #
+# Check here: https://github.com/simonyiszk/openwebrx/wiki#guides-for-receiver-hardware-support #
+#################################################################################################
+
+# You can use other SDR hardware as well, by giving your own command that outputs the I/Q samples... Some examples of configuration are available here (default is RTL-SDR):
 
 # >> RTL-SDR via rtl_sdr
 start_rtl_command = "rtl_sdr -s {samp_rate} -f {center_freq} -p {ppm} -g {rf_gain} -".format(
@@ -131,17 +140,9 @@ mathbox_waterfall_colors = "[0x000000ff,0x2e6893ff, 0x69a5d0ff, 0x214b69ff, 0x9d
 # This allows you to change the buffering mode of csdr.
 csdr_dynamic_bufsize = False
 # This prints the buffer sizes used for csdr processes.
-csdr_print_bufsizes = False
+csdr_print_bufsizes = True
 # Setting this True will print out how much data is going into the DSP chains.
-csdr_through = False
+csdr_through = True
 
 # in megabytes. This sets the approximate size of the circular buffer used by nmux.
-nmux_memory = 50
-
-# Look up external IP address automatically from icanhazip.com, and use it as [server_hostname]
-"""
-print "[openwebrx-config] Detecting external IP address..."
-import urllib2
-server_hostname=urllib2.urlopen("http://icanhazip.com").read()[:-1]
-print "[openwebrx-config] External IP address detected:", server_hostname
-"""
+nmux_memory = 100
