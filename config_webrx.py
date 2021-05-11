@@ -16,7 +16,7 @@ receiver_device = "RTL-SDR"
 receiver_admin = "Ricardo Paschoali (PY2PCR)"
 receiver_gps = (47.000000, 19.000000)
 photo_height = 350
-photo_title = "Panorama of Budapest from Schönherz Zoltán Dormitory"
+photo_title = "Casa Do Radioamador de Ribeirao Preto-SP"
 photo_desc = """
 You can add your own background photo and receiver information.<br />
 Receiver is operated by: <a href="mailto:%[RX_ADMIN]">%[RX_ADMIN]</a><br/>
@@ -56,16 +56,6 @@ Note: if you experience audio underruns while CPU usage is 100%, you can:
 - decrease `fft_fps` and `fft_size`,
 - limit the number of users by decreasing `max_clients`.
 """
-
-# ==== I/Q sources ====
-# (Uncomment the appropriate by removing # characters at the beginning of the corresponding lines.)
-
-#################################################################################################
-# Is my SDR hardware supported?                                                                 #
-# Check here: https://github.com/simonyiszk/openwebrx/wiki#guides-for-receiver-hardware-support #
-#################################################################################################
-
-# You can use other SDR hardware as well, by giving your own command that outputs the I/Q samples... Some examples of configuration are available here (default is RTL-SDR):
 
 # >> RTL-SDR via rtl_sdr
 start_rtl_command = "rtl_sdr -s {samp_rate} -f {center_freq} -p {ppm} -g {rf_gain} -".format(
