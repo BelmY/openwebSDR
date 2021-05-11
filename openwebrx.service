@@ -1,0 +1,10 @@
+
+[Unit]
+Description=site
+
+[Service]
+Type=simple
+ExecStart=/etc/init.d/openwebrx start
+
+[Install]
+WantedBy=multi-user.target

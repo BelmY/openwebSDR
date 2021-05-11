@@ -1,0 +1,52 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          WebSDR
+# Required-Start:    $syslog $time $remote_fs
+# Required-Stop:     $syslog $time $remote_fs
+# Default-Start:     3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: WebSDR
+# Description:       WebSDR
+### END INIT INFO
+#
+# Author:      RCP
+#
+
+
+set -e
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/opt/openwebrx
+SL_PATH=/opt/openwebrx
+DAEMON="/opt/openwebrx/openwebrx.py "
+PIDFILE=/var/run/openwebrx.pid
+
+test -x $SL_PATH || exit 0
+
+. /lib/lsb/init-functions
+
+case "$1" in
+  start)
+        log_daemon_msg "Starting deferred execution openwebrx"
+	start_daemon -p $PIDFILE $DAEMON
+	#sudo $DAEMON
+        log_end_msg $?
+    ;;
+  stop)
+        log_daemon_msg "Stopping deferred execution openwebrx"
+        killproc -p $PIDFILE $DAEMON
+        log_end_msg $?
+    ;;
+  force-reload|restart)
+    $0 stop
+    $0 start
+    ;;
+  status)
+    status_of_proc -p $PIDFILE $DAEMON && exit 0 || exit $?
+    ;;
+  *)
+    echo "Usage: /etc/init.d/openwebrx {start|stop|restart|force-reload|status}"
+    exit 1
+    ;;
+esac
+
+exit 0
