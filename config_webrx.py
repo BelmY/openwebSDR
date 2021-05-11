@@ -11,14 +11,14 @@ receiver_name = "[Casa do Radioamador de Ribeirao Preto]"
 receiver_location = "Ribeirão Preto SP, Brazil"
 receiver_qra = "PY2ERA"
 receiver_asl = 540
-receiver_ant = "Windom"
+receiver_ant = "Flowerpot"
 receiver_device = "RTL-SDR"
 receiver_admin = "Ricardo Paschoali (PY2PCR)"
-receiver_gps = (47.000000, 19.000000)
+receiver_gps = (-21.2216436, -47.7660078)
 photo_height = 350
 photo_title = "Casa Do Radioamador de Ribeirao Preto-SP"
 photo_desc = """
-You can add your own background photo and receiver information.<br />
+"Casa do Radioamador de Ribeirão Preto" (House of the Radio Amateur of Ribeirão Preto).<br />
 Receiver is operated by: <a href="mailto:%[RX_ADMIN]">%[RX_ADMIN]</a><br/>
 Device: %[RX_DEVICE]<br />
 Antenna: %[RX_ANT]<br />
