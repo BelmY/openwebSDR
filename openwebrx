@@ -15,9 +15,9 @@
 
 set -e
 
-PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/opt/openwebrx
-SL_PATH=/opt/openwebrx
-DAEMON="/opt/openwebrx/openwebrx.py "
+PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/urs/local/sbin
+SL_PATH=/urs/local/sbin
+DAEMON="/urs/local/sbin/opensdr "
 PIDFILE=/var/run/openwebrx.pid
 
 test -x $SL_PATH || exit 0

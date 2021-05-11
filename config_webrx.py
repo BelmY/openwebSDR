@@ -27,25 +27,25 @@ Website: <a href="http://casadoradioamador.org.br" target="_blank">http://casado
 
 sdrhu_key = ""
 # 3. Set this setting to True to enable listing:
-sdrhu_public_listing = True
+sdrhu_public_listing = False
 
 # ==== DSP/RX settings ====
-fft_fps = 25
-fft_size = 4096*2  # Should be power of 2
+fft_fps = 20
+fft_size = 4096  # Should be power of 2
 # If fft_voverlap_factor is above 0, multiple FFTs will be used for creating a line on the diagram.
 fft_voverlap_factor = 0.3
 
 # samp_rate = 250000
-samp_rate = 2400000
-center_freq = 146000000
+samp_rate = 900000
+center_freq = 146670000
 # in dB. For an RTL-SDR, rf_gain=0 will set the tuner to auto gain mode, else it will be in manual gain mode.
-rf_gain = 45
-ppm = 35
-audio_compression = "none"  # valid values: "adpcm", "none"
+rf_gain = 30
+ppm = 45
+audio_compression = "adpcm"  # valid values: "adpcm", "none"
 fft_compression = "adpcm"  # valid values: "adpcm", "none"
 
-digimodes_enable = True  # Decoding digimodes come with higher CPU usage.
-digimodes_fft_size = 2048
+digimodes_enable = False  # Decoding digimodes come with higher CPU usage.
+digimodes_fft_size = 1024
 
 start_rtl_thread = True
 
@@ -112,12 +112,12 @@ iq_server_port = 4951
 # A guide is available to help you set these values: https://github.com/simonyiszk/openwebrx/wiki/Calibrating-waterfall-display-levels
 
 # default theme by teejez:
+#waterfall_colors = "[0x000000ff,0x2e6893ff, 0x69a5d0ff, 0x214b69ff, 0x9dc4e0ff,  0xfff775ff, 0xff8a8aff, 0xb20000ff]"
 waterfall_colors = "[0x000000ff,0x0000ffff,0x00ffffff,0x00ff00ff,0xffff00ff,0xff0000ff,0xff00ffff,0xffffffff]"
-waterfall_min_level = -88  # in dB
+waterfall_min_level = -90  # in dB
 waterfall_max_level = -20
 waterfall_auto_level_margin = (5, 40)
 # old theme by HA7ILM:
-#waterfall_colors = "[0x000000ff,0x2e6893ff, 0x69a5d0ff, 0x214b69ff, 0x9dc4e0ff,  0xfff775ff, 0xff8a8aff, 0xb20000ff]"
 # waterfall_min_level = -115 #in dB
 #waterfall_max_level = 0
 #waterfall_auto_level_margin = (20, 30)
@@ -133,7 +133,7 @@ waterfall_auto_level_margin = (5, 40)
 
 # 3D view settings
 mathbox_waterfall_frequency_resolution = 128  # bins
-mathbox_waterfall_history_length = 10  # seconds
+mathbox_waterfall_history_length = 5  # seconds
 mathbox_waterfall_colors = "[0x000000ff,0x2e6893ff, 0x69a5d0ff, 0x214b69ff, 0x9dc4e0ff,  0xfff775ff, 0xff8a8aff, 0xb20000ff]"
 
 # === Experimental settings ===
