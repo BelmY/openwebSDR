@@ -40,8 +40,7 @@
         </div>
         <div id="webrx-top-bar-background" class="webrx-top-bar-parts"></div>
         <div id="webrx-top-bar" class="webrx-top-bar-parts">
-            <a ><img src="gfx/openwebrx-top-logo.png" id="webrx-top-logo" /></a>
-            <a ><img src="gfx/openwebrx-ha5kfu-top-logo.png" id="webrx-ha5kfu-top-logo" /></a>
+            <!-- <a ><img src="gfx/openwebrx-top-logo.png" id="webrx-top-logo" /></a> -->
             <img id="webrx-rx-avatar-background" src="gfx/openwebrx-avatar-background.png" onclick="toggle_rx_photo();"/>
             <img id="webrx-rx-avatar" src="gfx/openwebrx-avatar.png" onclick="toggle_rx_photo();"/>
             <div id="webrx-rx-title" onclick="toggle_rx_photo();">%[RX_TITLE]</div>
