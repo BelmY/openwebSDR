@@ -3,7 +3,7 @@
     
 <html>
     <head>
-        <title>OpenWebRX | Open Source SDR Web App for Everyone!</title>
+        <title>CRRP-SDR</title>
         <script type="text/javascript">
             //Global variables
             var client_id="%[CLIENT_ID]";
@@ -28,6 +28,7 @@
         <script src="jquery.nanoscroller.js"></script>
         <link rel="stylesheet" type="text/css" href="nanoscroller.css" />
         <link rel="stylesheet" type="text/css" href="openwebrx.css" />
+        <link rel="icon" href="./favicon.ico" type="image/x-icon">
         <meta charset="utf-8">
     </head>
     <body onload="openwebrx_init();">
